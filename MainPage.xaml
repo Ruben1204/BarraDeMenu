@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BarraDeMenu.MainPage">
+
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="Archivo">
+            <MenuFlyoutItem Text="Salir"
+                            CommandParameter="{Binding ComandoSalir}"/>
+        </MenuBarItem>
+
+        <MenuBarItem Text="Ubicación">
+            <MenuFlyoutSubItem Text="Cambiar Ubicación">
+                <MenuFlyoutItem Text="Bucaramanga, COL"
+                                Command="{Binding ComandoCambiarUbicacion}"
+                                CommandParameter="Bucaramanga">
+                    <MenuFlyoutItem.IconImageSource>
+                        <FontImageSource Glyph="&#x25B6;"
+                                         FontFamily="Arial"
+                                         Color="Purple"/>
+                    </MenuFlyoutItem.IconImageSource>
+                </MenuFlyoutItem>
+                <MenuFlyoutItem Text="Guadalajara, Mex"
+                                Command="{Binding ComandoCambiarUbicacion}"
+                                CommandParameter="Guadalajara"/>
+                <MenuFlyoutItem Text="Buenos Aires, Ar"
+                                Command="{Binding ComandoCambiarUbicacion}"
+                                CommandParameter="Buenos Aires"/>
+            </MenuFlyoutSubItem>
+            
+            <MenuFlyoutSeparator/>
+
+            <MenuFlyoutItem Text="Agregar Ubicación"
+                            Command="{Binding ComandoAgregarUbicacion}"/>
+            <MenuFlyoutItem Text="Editar Ubicación"
+                            Command="{Binding ComandoEditarUbicacion}"/>
+            <MenuFlyoutItem Text="Eliminar Ubicación"
+                            Command="{Binding ComandoEliminarUbicacion}"/>
+        </MenuBarItem>
+        <MenuBarItem Text="Vista">
+            <MenuFlyoutItem Text="Refrescar"
+                            Command="{Binding ComandoRefrescar}"/>
+            <MenuFlyoutItem Text="Cambiar Tema"
+                            Command="{Binding ComandoCambiarTema}"/>
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+
+</ContentPage>
